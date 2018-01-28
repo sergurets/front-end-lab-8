@@ -44,13 +44,13 @@ a:focus{color:#666;outline:0}ul{padding:0;margin:0}body{background-color:#f2f2f2
 }
 /**/
  @media screen {
-	/*task_2*/
-	.boxes .box{
-		border-bottom: 1px solid silver!important; 
-		border-right: 1px solid silver!important;
-        border-top: none!important;
-        border-left: none!important; 		
-	}
+    /*task_2*/
+     .boxes .box{
+         border-bottom: 1px solid silver!important;
+         border-right: 1px solid silver!important;
+         border-top: none!important;
+         border-left: none!important;
+    }
     /*task_3*/
      p:first-letter{
          color: #76cdd7;
@@ -74,47 +74,45 @@ a:focus{color:#666;outline:0}ul{padding:0;margin:0}body{background-color:#f2f2f2
          font-style: italic;
     }
     /*task_8*/
-	 section p {
-		 text-indent: 1.5em;
+     section p {
+         text-indent: 1.5em;
     }
-	 #home p {
-		 text-indent: 0;
+     #home p {
+         text-indent: 0;
     }
      section:nth-of-type(2) h2 {
-		 color: red;
-	}
+         color: red;
+    }
     /*task_9*/
-	 .heading {
-		 color: #80D1DA;
-	 }
+     .heading {
+         color: #80D1DA;
+    }
      .heading a:visited {
          color: silver;
     }
      .heading a:hover {
          color: blue;
     }
-	 .heading a:not(.text):after {
-        content: '.';
+     .heading a:not(.text):after {
+         content: '.';
     }
-	    .text:after {
+     .text:after {
          content: ' New';
          color: red;
          position: relative;
          bottom: 5px;
          font-size: 10px;
-		 text-decoration: none;
     }
-	    /*task_10*/
+    /*task_10*/
      div.tm-content-box:nth-of-type(3) li:nth-of-type(odd) {
          background-color: #f2f2f2;
     }
-	 div.tm-content-box:nth-of-type(3) p:first-letter {
-	     color: black;
+     div.tm-content-box:nth-of-type(3) p:first-letter {
+         color: black;
     }
-	 div.tm-content-box:nth-of-type(3) p {
-	text-indent: 0;
-	}
-    
+     div.tm-content-box:nth-of-type(3) p {
+         text-indent: 0;
+    }
     /*task_11*/
      li.tm-nav-item {
          border-bottom: 1px solid silver;
@@ -122,13 +120,13 @@ a:focus{color:#666;outline:0}ul{padding:0;margin:0}body{background-color:#f2f2f2
      li.tm-nav-item:last-of-type {
          border: none;
     }
-	/*task_12*/
+    /*task_12*/
      input[type="text"], button[type="submit"] {
          color: red;
     }
 }
 /*task_13*/
-@media screen and (max-device-width: 1139px), (max-device-height: 834px) {
+ @media screen and (max-device-width: 1139px), (max-device-height: 834px) {
      .tm-main-content{
          padding-top: 90px;
     }
@@ -155,3 +153,4 @@ a:focus{color:#666;outline:0}ul{padding:0;margin:0}body{background-color:#f2f2f2
          padding: 0;
     }
 }
+ 
