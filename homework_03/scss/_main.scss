@@ -1,0 +1,100 @@
+body{
+    background-color: $bodyColor;
+}
+@mixin cont($background-color, $width) {
+    background-color: $background-color;
+    width: $width;
+  }
+#content{  
+    margin: 0 auto;
+    padding: 20px 20px;
+    color: $contentTextColor;
+    @include cont($background-color: $contentBackColor, $width: 960px);
+  }
+h1 {
+    color: $headingColor;
+    text-align: center;
+    margin: 0;
+    text-transform: $h1Transform;
+}
+h2{
+    color: $headingColor;
+    margin: 10px 0;
+}
+img{
+    border: 2px solid $headingColor;
+    padding: 2px;
+    margin-bottom: 10px;
+}
+.img-left {
+    float: left;
+    margin-right: 20px;
+}
+.img-right {
+    float: right;
+    margin-left: 20px;
+}
+.brief {
+    color: $briefColor;
+    padding: 20px;
+    float: left;
+    margin: 10px 20px 10px 0;
+    margin-bottom: $briefMarginBot;
+    @include cont($background-color: $briefBackColor, $width: $briefWidth);
+  }
+a {
+    color: $aColor;
+}
+caption{
+    text-align: right;
+    color: black;
+}
+th{
+    background: $tableThBackColor;
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: left;
+    border-right: 1px solid white;
+    color: black;
+}
+th, td{
+    padding: 10px 20px;
+}
+td{
+    border-bottom: 1px solid $tableThBackColor;
+    border-right: 0px;
+    background-color: $tableBackColor;
+}
+table {
+    border-collapse: collapse;
+    margin-bottom: 60px;
+}
+input, textarea{
+    margin-bottom: 15px;
+    margin-top: 5px;
+    padding: 3px;
+    color: $formValueColor;
+}
+.name{ width: 49%;
+    input {
+        width: 100%
+     }
+} 
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+form {
+    color: $formColor;
+    margin-top: 20px;
+}
+.wide {
+    width: 100%;
+}
+input[type="submit"] {
+    color: $buttonColor;
+    background-color: $contentBackColor;
+    padding: 10px 60px;
+    font-size: 20px;
+    border: 1px solid $buttonColor;
+}
