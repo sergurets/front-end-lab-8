@@ -149,8 +149,6 @@ body, p {
     }
      .grid {
          width: 96%;
-        /*margin: 20px;
-         */
          grid-template-areas: "a b" "c d" "e f";
          grid-template-columns: 1fr 1fr;
     }
