@@ -10,7 +10,7 @@ if (s.toFixed(2) <= 0 || (a < 0 || b < 0 || c < 0 || isNaN(s) || s == 0)) {
 } else {
   isRight()
   isEqual();
-  (s.toFixed(2) > Math.floor(s)) ? s_res = s.toFixed(2): s_res = Math.round(s);
+  (s.toFixed(2) > Math.floor(s)) ? s_res = s.toFixed(2): s_res = Math.floor(s);
   result = type + "triangle and square is " + s_res;
 }
 console.log(result);

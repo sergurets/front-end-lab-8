@@ -11,6 +11,10 @@ usd_uah = ua_usd * usd;
 if (isNaN(eur_uah) || isNaN(usd_uah) || euro < 0 || usd < 0) {
   result = "Incorrect data";
 } else {
-  result = euro.toFixed(2) + " euros are equal " + eur_uah.toFixed(2) + " UAH, " + usd.toFixed(2) + " dollars are equal " + usd_uah.toFixed(2)  + " UAH, one euro is equal " + eur_usd.toFixed(2) + " dollars";
+  result = round(euro) + " euros are equal " + round(eur_uah) + " UAH, " + round(usd) + " dollars are equal " + round(usd_uah)  + " UAH, one euro is equal " + round(eur_usd)  + " dollars";
 }
 console.log(result);
+function round(a){
+	if(a.toFixed(2) > Math.floor(a)){return a.toFixed(2)}
+	else {return Math.floor(a)}
+}
