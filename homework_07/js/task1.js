@@ -1,7 +1,6 @@
 n= Number(prompt("Enter a number from 1 to 20"));
 if ((n>20)||(!Number.isInteger(n))||(n<1)){console.log("Incorrect!");}
 else {
-	var str="\n";
 	var str="";
 	var voidElement = "   ";
 	var elem = "[~]";
