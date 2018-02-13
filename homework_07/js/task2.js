@@ -8,7 +8,6 @@ if (game) {
   while (game) {
     status = "";
     number = Math.floor(Math.random() * (max + 1));
-    console.log(number);
     for (var i = 0; i < 3; i++) {
       userNumb = prompt("Enter a number from 0 to " + max + "\nAttempts left: " + i + "\nTotal prize: " + prize + "$" + "\nPossible prize on current attempt: " + arr[i] + "$", "");
       if (userNumb === null) {
