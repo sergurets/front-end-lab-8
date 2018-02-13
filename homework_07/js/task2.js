@@ -3,7 +3,7 @@ prize = 0;
 maxprize = 10;
 arr = [Math.floor(maxprize), Math.floor(maxprize / 2), Math.floor(maxprize / 4)];
 max = 5;
-var game = confirm('Do you want to play a game');
+var game = confirm('Do you want to play a game?');
 if (game) {
   while (game) {
     status = "";
