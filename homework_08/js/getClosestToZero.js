@@ -7,6 +7,3 @@ function getClosestToZero() {
   }
   return min;
 }
-
- 
-
