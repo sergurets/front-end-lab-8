@@ -26,15 +26,16 @@ function renderAll() {
   rootNode.innerHTML = rend(tanks);
   var divClk = rootNode.querySelectorAll('div.allTanks');
   for (var i = 0; i < divClk.length; i++) {
-    divClk[i].addEventListener('click', getData);
+    divClk[i].addEventListener('click', function() {
+		location.hash = this.id;})
   }
 }
 
-function getData() {
-  location.hash = this.id;
-  root.innerHTML = tank(tanks, this.id);
-}
-
+window.addEventListener('hashchange', function() {
+	console.log(location.hash);
+	if(location.hash!="") {console.log(location.hash); root.innerHTML = tank(tanks, location.hash.substr(1))}
+	else {renderAll()} 
+});
 
 function tank(arr, i) {
   var result = `<div class="tank-details"><h1><img src=${arr[i].country_image} alt=""/> <span>${arr[i].model}</span> (level ${arr[i].level})</h1>
@@ -54,5 +55,4 @@ function data(str) {
 
 function backTo() {
   location.hash = "";
-  renderAll();
 }
