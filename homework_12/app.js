@@ -1,5 +1,6 @@
 var rootNode = document.getElementById("root");
 renderAll();
+
 function rend(arr) {
   var result = '<div class="thumbnails"><h1>Most popular tanks</h1><div class="all">';
   for (var i = 0; i < arr.length; i++) {
@@ -27,14 +28,19 @@ function renderAll() {
   var divClk = rootNode.querySelectorAll('div.allTanks');
   for (var i = 0; i < divClk.length; i++) {
     divClk[i].addEventListener('click', function() {
-		location.hash = this.id;})
+      location.hash = this.id;
+    })
   }
 }
 
 window.addEventListener('hashchange', function() {
-	console.log(location.hash);
-	if(location.hash!="") {console.log(location.hash); root.innerHTML = tank(tanks, location.hash.substr(1))}
-	else {renderAll()} 
+  console.log(location.hash);
+  if (location.hash != "") {
+    console.log(location.hash);
+    root.innerHTML = tank(tanks, location.hash.substr(1))
+  } else {
+    renderAll()
+  }
 });
 
 function tank(arr, i) {
