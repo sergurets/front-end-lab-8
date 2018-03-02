@@ -34,9 +34,7 @@ function renderAll() {
 }
 
 window.addEventListener('hashchange', function() {
-  console.log(location.hash);
   if (location.hash != "") {
-    console.log(location.hash);
     root.innerHTML = tank(tanks, location.hash.substr(1))
   } else {
     renderAll()
