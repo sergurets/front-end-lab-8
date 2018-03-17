@@ -1,149 +1,114 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <meta charset="utf-8">
-      <title>hw</title>
-      <link rel="stylesheet" href="style.css">
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>HTML5</title>
+      <link rel="stylesheet" href="styles/bootstrap.min.css">
+      <link rel="stylesheet/less" type="text/css" href="styles/styles.less" />
+      <script src="js/less.min.js"></script>
    </head>
    <body>
-      <div id="wrapper">
-         <div id="main">
-            <div id="container">
-               <div id="content" role="main">
-                  <!-- TODO: Content goes here -->
-                  <header>
-                     <img src="EPAM_logo.svg" alt="logo"/>
-                     <nav>
-                        <a href='#HTML'><b>HTML</b></a>
-                        <a href='#List'><b>List</b></a>
-                        <a href='#Table'><b>Table</b></a>
-                        <a href='#Text'><b>Text formats</b></a>
-                        <a href='#Blockquotes'><b>Blockquotes</b></a>
-                     </nav>
-                  </header>
-                  <hr>
-                  <h1 id="HTML"><b>HTML Elements</b></h1>
-                  <hr>
-                  <h2 id="List">Ordered List</h2>
-                  <ul>
-                     <li>
-                        <h1>Heading 1</h1>
-                        <ul>
-                           <li>
-                              <h2>Heading 2</h2>
-                              <ul>
-                                 <li>
-                                    <h3>Heading 3</h3>
-                                 </li>
-                              </ul>
-                           </li>
-                        </ul>
-                     </li>
-                  </ul>
-                  <ol>
-                     <li>
-                        <h4>Heading 4</h4>
-                        <ol type="A">
-                           <li>
-                              <h5>Heading 5</h5>
-                              <ol type="i">
-                                 <li>
-                                    <h6>Heading 6</h6>
-                                 </li>
-                              </ol>
-                           </li>
-                        </ol>
-                     </li>
-                  </ol>
-                  <h3>Definition List</h3>
-                  <dl>
-                     <dt>defines terms 1</dt>
-                     <dd>description 1</dd>
-                     <dt>defines terms 2</dt>
-                     <dd>description 2</dd>
-                  </dl>
-                  <h2>Details</h2>
-                  <details open>
-                     <summary>Even more details open</summary>
-                     <p>Here are even more details about the details.</p>
-                  </details>
-                  <details>
-                     <summary>Even more details close</summary>
-                     <p>Here are even more details about the details.</p>
-                  </details>
-                  <hr>
-                  <h2 id="Table">Table</h2>
-                  <table>
-                     <thead>
-                        <tr>
-                           <th>Elements</th>
-                           <th>Elements</th>
-                           <th>Elements</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td><strong>Strong</strong></td>
-                           <td>H<sub>2</sub>O</td>
-                           <td><a href="#">test link</a></td>
-                        </tr>
-                        <tr>
-                           <td><i>Italic</i></td>
-                           <td><u>Underline.</u></td>
-                           <td><del>Delete</del></td>
-                        </tr>
-                        <tr>
-                           <td><abbr>Abbreviation</abbr></td>
-                           <td>5<sup>3</sup>=125</td>
-                           <td><ins>Inserted</ins></td>
-                        </tr>
-                     </tbody>
-                  </table>
-                  <hr>
-                  <h2 id="Text">Text formats</h2>
-                  <h3>Article Text</h3>
-                  <article>
-                     <h2>Article title</h2>
-                     <p>Article description</p>
-                  </article>
-                  <h3>
-                     Preformatted Text
-                  </h3>
-                  <pre>
-Text
-  in a pre element
-    is displayed in a fixed-width
-font, and it preserves
-both           spaces and
-    line breaks
-	
-				  </pre>
-                  <h3>Code</h3>
-                  <pre>
-				     <code>
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-}
-
-					 </code>
-				  </pre>
-                  <hr>
-                  <h2 id="Blockquotes">Blockquotes</h2>
-                  <p>Let’s keep it simple. Italics are good to help set it off from the body text. Be sure to style the citation.
-                  <p>
-                  <blockquote>
-                     <p>Technology is nothing. What's important is that you have a faith in people, that they're basically good and smart, and if you give them tools, they'll do wonderful things with them.
-                        <br><a href="#" title="And here’s a bit of trailing text.">Steve Jobs</a>
-                     </p>
-                  </blockquote>
-                  <!--And here’s a bit of trailing text.-->
-                  <footer>Copyright Epam Systems</footer>
+      <div class="container-fluid bg-light border-bottom">
+	      <div class="container cont_width">
+			 <nav class="navbar navbar-expand-md navbar-light p-0">
+				<a class="navbar-brand" href="#">
+				<img src="img/logo.png" alt="">
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarText">
+				   <ul class="navbar-nav mr-auto bold-font">
+					  <li class="nav-item">
+						 <a class="nav-link p-3" href="#">Classes </a>
+					  </li>
+					  <li class="nav-item">
+						 <a class="nav-link p-3" href="#">About us</a>
+					  </li>
+					  <li class="nav-item">
+						 <a class="nav-link p-3" href="#">Contacts</a>
+					  </li>
+				   </ul>
+				</div>
+			 </nav>
+			 </div>
+		 </div>
+		 <div class="container cont_width">
+         <h1 class="pt-4">Yoga Pilates</h1>
+         <hr class="hr-color mt-2">
+         <div class="row">
+            <div class="col-lg-8 px-0 ">
+               <img class="col" src="img/yoga.jpg" alt="">
+            </div>
+            <div class="col-lg-4">
+               <h3 class="pt-3" >Class description</h3>
+               <p>This workout uses a series of exercise routines designed to increase your core strength & improve your posture, energy, & flexibility. Pilates work is powered by breath, flow, & centering. By focusing on the mind-body connection & using more
+                  efficient form, this workout helps develop a stronger, leaner, healthier body. Appropriate for all fitness levels.
+               </p>
+               <ul class="">
+                  <li class="">
+                     One Personal Trainer
+                  </li>
+                  <li class="">
+                     Big gym space for training
+                  </li>
+                  <li class="">
+                     Free tools & props
+                  </li>
+                  <li class="">
+                     Free locker
+                  </li>
+                  <li class="">
+                     Free before / after shower
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <h3 class="mt-5">Related classes</h3>
+         <hr class="hr-color">
+         <div class="row">
+            <div class="col-6 col-md-3 mb-md-5 mb-sm-4">
+               <div class="card card-color-1 rounded-0 bold-font">
+                  <img class="card-img-top rounded-0" src="img/cardio-kickbox.jpg" alt="Card image cap">
+                  <div class="card-body py-2 px-0">
+                     <p class="card-text text-center">Cardio kickboxing</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-6 col-md-3 mb-md-5 mb-sm-4">
+               <div class="card card-color-2 rounded-0 bold-font">
+                  <img class="card-img-top rounded-0" src="img/fitness.jpg" alt="Card image cap">
+                  <div class="card-body py-2 px-0">
+                     <p class="card-text text-center">Fitness xpress</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-6 col-md-3 mb-md-5 mb-sm-4">
+               <div class="card card-color-3 rounded-0 bold-font">
+                  <img class="card-img-top rounded-0" src="img/zumba.jpg" alt="Card image cap">
+                  <div class="card-body py-2 px-0">
+                     <p class="card-text text-center">Zumba</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-6 col-md-3 mb-md-5 mb-sm-4">
+               <div class="card card-color-4 rounded-0 bold-font">
+                  <img class="card-img-top rounded-0" src="img/bootcamp.jpg" alt="Card image cap">
+                  <div class="card-body py-2 px-0">
+                     <p class="card-text text-center">Bootcamp</p>
+                  </div>
                </div>
             </div>
          </div>
+         <footer class="bold-font mt-md-0 mt-sm-4">
+            <div class="footer-copyright py-2 px-3  text-left">
+               © Epam Front-end lab, 2018
+            </div>
+         </footer>
       </div>
+      <script src="js/jquery-slim.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
    </body>
 </html>
