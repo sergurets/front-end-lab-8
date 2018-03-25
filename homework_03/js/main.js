@@ -20,7 +20,7 @@
   }
 
   this.fire = function(val, timeFired) {
-    if (val == company) {
+    if (val === company) {
       timeOut = +timeFired;
       history = history + "\n" + this.name + " is fired from " + company + " in " + timeFired;
       company = '';
