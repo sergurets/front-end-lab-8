@@ -16,6 +16,7 @@ function Warrior(obj) {
   this.name = obj.name;
   this.attack = obj.attack;
   this.hitpoints = obj.hitpoints;
+
   this.totalHitpoints = obj.hitpoints;
   this.getHitpoints = function() {
     return this.hitpoints
@@ -44,7 +45,7 @@ function Warrior(obj) {
   this.setAttack = function(val) {
     this.attack = val;
   };
-
+  
   this.fight = function(opp) {
     if (!opp.isAlive()) {
       console.log(`${opp.name} is killed`);
@@ -56,8 +57,9 @@ function Warrior(obj) {
           this.enrageCounter--;
         }
       } else {
+           
         if (this.enrageCounter > 0) {
-          opp.hitpoints = opp.hitpoints - 2 * this.attack;
+          opp.hitpoints = opp.hitpoints - 2*this.attack;
           this.enrageCounter--;
         } else {
           opp.hitpoints = opp.hitpoints - this.attack;
@@ -91,7 +93,7 @@ function Champion() {
     this.totalHitpoints++;
   }
   this.killOpp = function(opp) {
-    this.attack++;
+    this.attack++; 
   }
 }
 Champion.prototype = Object.create(Warrior.prototype);
@@ -99,12 +101,15 @@ Champion.prototype = Object.create(Warrior.prototype);
 function Monster() {
   this.counterDefence = false;
   this.enrageCounter = 0;
+  this.furyStatus = false;
   Warrior.apply(this, arguments);
   this.enrage = function() {
     this.enrageCounter = 2;
+    console.log(this.enrageCounter);
   };
   this.fury = function() {
     if (this.hitpoints > 5) {
+      this.furyStatus = true;
       this.attack = this.attack + 2;
       this.hitpoints = this.hitpoints - 5;
       this.totalHitpoints = this.totalHitpoints - 5;
@@ -114,7 +119,8 @@ function Monster() {
   };
   this.killOpp = function(opp) {
     this.totalHitpoints = this.totalHitpoints + Math.floor(0.1 * opp.totalHitpoints);
-    this.hitpoints = this.hitpoints + Math.floor(0.25 * opp.totalHitpoints);
+     this.hitpoints = this.hitpoints + Math.floor(0.25 * opp.totalHitpoints);
   }
+
 }
 Monster.prototype = Object.create(Warrior.prototype);
