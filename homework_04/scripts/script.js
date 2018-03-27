@@ -44,7 +44,7 @@ Warrior.prototype.fight = function(opp) {
                 opp.hitpoints = opp.hitpoints - this.attack;
             }
             if (!opp.isAlive()) {
-                this.killOpp();
+                this.killOpp(opp);
                 console.log(`${this.name} killed ${opp.name}`);
                 opp.hitpoints = 0;
             }
