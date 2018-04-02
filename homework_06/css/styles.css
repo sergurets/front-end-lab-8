@@ -1,0 +1,110 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0 auto;
+  text-align: center;
+  color: #21272C;
+  background-color: #F4F4F4;
+}
+
+h1 {
+  font-size: 40px;
+  margin-top: 40px;
+}
+
+#validate {
+  display: none;
+}
+
+p,
+form {
+  margin: 10px;
+  text-align: center;
+}
+
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  max-width: 40%;
+  font-size: 20px;
+}
+
+td,
+tr {
+  padding: 5px;
+  text-align: left;
+}
+
+input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid silver;
+}
+
+#validate,
+#ip {
+  background-color: rgb(255, 204, 0);
+}
+
+#validate:hover,
+#ip:hover {
+  background-color: #ffd83b;
+  ;
+}
+
+#validate {
+  margin: 0 auto;
+}
+
+#warning {
+  width: 60%;
+  display: none;
+  text-align: center;
+  font-size: 24px;
+  margin: 0 auto;
+  background-color: red;
+  opacity: 0.85;
+  color: white;
+  position: fixed;
+  left: 20%;
+  border-radius: 10px;
+}
+
+#resultPOST {
+  display: none;
+}
+
+@-webkit-keyframes loader {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes loader {
+  100% {
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#loader1,
+#loader2 {
+  display: none;
+  margin: 10px auto;
+  width: 35px;
+  height: 35px;
+  border: 5px solid #000;
+  border-left-color: #333;
+  border-bottom-color: #555;
+  border-right-color: transparent;
+  border-radius: 100%;
+  -webkit-animation: loader 0.5s infinite linear;
+  -moz-animation: loader 0.5s infinite linear;
+  animation: loader 0.5s infinite linear;
+}
