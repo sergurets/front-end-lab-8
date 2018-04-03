@@ -6,13 +6,10 @@ var buttonValidat = document.getElementById('validate');
 var result = document.getElementById('result');
 var resultPOST = document.getElementById('resultPOST');
 var resultGet;
-var json;
 
 function renderTable(obj) {
-  loader1.style.display = "none";
-  loader2.style.display = "none";
+  hideLoader();
   if (obj.country) {
-
     result.innerHTML = `
 	<table border="1" width="100%" cellpadding="5">
    <tr>
@@ -49,15 +46,10 @@ buttonIP.addEventListener('click', function() {
 
   var adrrIP = document.getElementById("myText").value;
   if (ValidateIPaddress(adrrIP)) {
-	result.style.display = "none";
+	hideResult();
 	loader1.style.display = "block";
-	resultPOST.style.display = "none";
 	loader2.style.display = "none";
-	buttonValidat.style.display = "none";
     http.get(`https://ipapi.co/${adrrIP}/json/`);
-    
-	
-    return false;
   }
 })
 buttonValidat.addEventListener('click', function() {
@@ -67,7 +59,7 @@ buttonValidat.addEventListener('click', function() {
 })
 
 function render_valid(respon) {
-  loader2.style.display = "none";
+  hideLoader();
   resultPOST.innerHTML = respon;
   resultPOST.style.display = "block";
 }
@@ -78,14 +70,12 @@ function render(respon) {
 }
 
 function err(respon) {
-  loader2.style.display = "none";
-  loader1.style.display = "none";
+  hideLoader();
   new Error("Request failed: " + respon);
 }
 
 function errNetwork() {
-  loader2.style.display = "none";
-  loader1.style.display = "none";
+  hideLoader();
   new Error("Network error");
 }
 
@@ -93,9 +83,22 @@ function ValidateIPaddress(ipaddress) {
   if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(ipaddress)) {
     return (true)
   }
+  hideResult();
+  hideLoader();
   warning.style.display = "block";
   setTimeout(function() {
     warning.style.display = "none"
   }, 2000)
   return (false)
+}
+function hideResult(){
+  result.style.display = "none";
+  buttonValidat.style.display = "none";
+  resultPOST.style.display = "none";	
+}
+
+
+function hideLoader(){
+  loader1.style.display = "none";
+  loader2.style.display = "none";	
 }
