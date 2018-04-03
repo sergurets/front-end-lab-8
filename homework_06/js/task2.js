@@ -12,27 +12,27 @@ function renderTable(obj) {
   if (obj.country) {
     result.innerHTML = `
 	<table border="1" width="100%" cellpadding="5">
-   <tr>
-    <td>ip</td>
-    <td>${obj.ip}</td>
-   </tr>
-   <tr>
-    <td>country</td>
-    <td>${obj.country_name}</td>
-   </tr>
-   <tr>
-    <td>city</td>
-    <td>${obj.city}</td>
-  </tr>
-     <tr>
-    <td>latitude</td>
-    <td>${obj.latitude}</td>
-  </tr>
-     <tr>
-    <td>longitude</td>
-    <td>${obj.longitude}</td>
-  </tr>
-  </table>`;
+      <tr>
+         <td>ip</td>
+         <td>${obj.ip}</td>
+      </tr>
+      <tr>
+         <td>country</td>
+         <td>${obj.country_name}</td>
+      </tr>
+      <tr>
+         <td>city</td>
+         <td>${obj.city}</td>
+      </tr>
+      <tr>
+         <td>latitude</td>
+         <td>${obj.latitude}</td>
+      </tr>
+      <tr>
+         <td>longitude</td>
+         <td>${obj.longitude}</td>
+      </tr>
+    </table>`;
     result.style.display = "block";
     buttonValidat.style.display = "block";
   } else {
@@ -96,7 +96,6 @@ function hideResult(){
   buttonValidat.style.display = "none";
   resultPOST.style.display = "none";	
 }
-
 
 function hideLoader(){
   loader1.style.display = "none";
