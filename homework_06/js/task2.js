@@ -42,6 +42,7 @@ function renderTable(obj) {
     }, 2000)
   }
 }
+
 buttonIP.addEventListener('click', function() {
 
   var adrrIP = document.getElementById("myText").value;
@@ -52,6 +53,7 @@ buttonIP.addEventListener('click', function() {
     http.get(`https://ipapi.co/${adrrIP}/json/`);
   }
 })
+
 buttonValidat.addEventListener('click', function() {
   loader2.style.display = "block";
   resultPOST.style.display = "none";
