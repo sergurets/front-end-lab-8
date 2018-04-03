@@ -1,6 +1,6 @@
 http = {
   get: function(url) {
-    return new Promise((resolve, reject) => {
+    return new Promise(function(resolve, reject) {
       var xhr = new XMLHttpRequest();
       xhr.open("GET", url, true);
       xhr.addEventListener("load", function() {
