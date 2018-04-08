@@ -25,9 +25,7 @@ $("#play").click(function () {
 	function check(el) {
 		var cls = el.className;
 		var currClass = cls.split(' ')[2];
-
 		var id = +el.id;
-
 
 		function win() {
 			$('.message').html(`<p>${currClass} win!</p> <input type="button" onclick="again()" value="Play Again?">`);
@@ -35,7 +33,6 @@ $("#play").click(function () {
 				'display': 'none'
 			});
 			$('.message').fadeIn(300);
-
 		}
 
 		if (row()) {
