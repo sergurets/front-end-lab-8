@@ -1,0 +1,146 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 0 auto;
+	text-align: center;
+	color: #21272C;
+	background-color: #F4F4F4;
+}
+
+p {
+	margin: 5px;
+}
+
+input {
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid silver;
+	background-color: rgb(255, 204, 0);
+}
+
+input:hover {
+	background-color: #ffd83b;
+}
+
+.mbox {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.row {
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	width: 30%;
+	flex-basis: 30%;
+}
+
+img {
+	display: none;
+	width: 300px;
+}
+
+.cell {
+	width: 21px;
+	height: 21px;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	float: left;
+	background-color: #D0A641;
+}
+
+.main {
+	border-left: 1px solid black;
+	//border-top: 1px solid black;
+	width: 330px;
+	margin: 0 auto;
+	background-color: silver;
+	overflow: hidden;
+}
+
+.round {
+	width: 308px;
+	margin: 0 auto;
+	background-color: silver;
+	position: relative;
+	bottom: 319px;
+}
+
+.circle {
+	z-index: 10;
+	text-align: left;
+	opacity: 0;
+	margin: 3px;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	float: left;
+}
+
+.Hoverblack {
+	opacity: 0.8;
+	background-color: black;
+}
+
+.Hoverwhite {
+	opacity: 0.8;
+	background-color: white;
+}
+
+.black {
+	opacity: 1;
+	background-color: black;
+}
+
+.white {
+	opacity: 1;
+	background-color: white;
+}
+
+.circleblack {
+	background-color: black;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+}
+
+.circlewhite {
+	background-color: white;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: 1px solid black;
+}
+
+.flex {
+	width: 300px;
+	display: flex;
+	justify-content: space-between;
+	margin: 20px auto;
+	display: none;
+}
+
+.line {
+	padding-bottom: 5px;
+	border-bottom: 4px solid black;
+}
+
+.message {
+	display: none;
+}
+
+.message {
+	position: relative;
+	bottom: 220px;
+	border-radius: 5px;
+	border: 1px solid silver;
+	background-color: #F0F0F0;
+	width: 250px;
+	height: 120px;
+	font-size: 40px;
+	text-align: center;
+	margin: 0 auto;
+}
