@@ -25,16 +25,9 @@ $("#play").click(function () {
 	function check(el) {
 		var cls = el.className;
 		var currClass = cls.split(' ')[2];
-		var arr = [];
-		var id = +el.id;
-		var start;
-		var end = 8;
 
-		if (id % 14 === 0 || id % 15 === 0 || id % 16 === 0 || id < 4) {
-			start = 0;
-		} else {
-			start = -4;
-		}
+		var id = +el.id;
+
 
 		function win() {
 			$('.message').html(`<p>${currClass} win!</p> <input type="button" onclick="again()" value="Play Again?">`);
