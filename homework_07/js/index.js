@@ -16,23 +16,19 @@ $("#play").click(function () {
 	var obj = {};
 	var id;
 
-
 	function circleObj() {
 		for (var key in obj) {
 			obj[key] = document.getElementById(`${key}`).className;
 		}
-
 	}
 
 	function check(el) {
 		var cls = el.className;
 		var currClass = cls.split(' ')[2];
-		//alert( currClass  )
 		var arr = [];
 		var id = +el.id;
 		var start;
 		var end = 8;
-
 
 		if (id % 14 === 0 || id % 15 === 0 || id % 16 === 0 || id < 4) {
 			start = 0;
@@ -40,10 +36,7 @@ $("#play").click(function () {
 			start = -4;
 		}
 
-		console.log(cls, id);
-
 		function win() {
-			console.log('Win');
 			$('.message').html(`<p>${currClass} win!</p> <input type="button" onclick="again()" value="Play Again?">`);
 			$(".circle").css({
 				'display': 'none'
@@ -56,9 +49,11 @@ $("#play").click(function () {
 			win()
 		} else if (column()) {
 			win()
+		} else if (diag1()) {
+			win()
+		} else if (diag2()) {
+			win()
 		}
-		//diag2();
-		// diag1();
 
 		function row() {
 			var start = -3;
@@ -89,12 +84,8 @@ $("#play").click(function () {
 				end = 2;
 			}
 
-			console.log(start, end);
 			var arr = [];
 			for (var i = start; i <= end; i++) {
-				{
-					console.log(id + i, document.getElementById(`${id+i}`).className)
-				}
 				if (document.getElementById(`${id+i}`).className.split(' ').indexOf(currClass) > -1) {
 					arr.push(1)
 				} else {
@@ -103,15 +94,8 @@ $("#play").click(function () {
 			}
 			str = arr.join('');
 			return str.indexOf('1111') > -1
-			/*) {
-			      console.log('Win');
-			      $('.message').html(`${currClass} win!`);
-				  $('#playagain, .message').css({'display':'block'});
-				  $(".circle").fadeOut();
-			    }*/
-			console.log('row', str, currClass);
 		}
-		/****/
+
 		function column() {
 			var start = -3;
 			var end = 3;
@@ -122,21 +106,16 @@ $("#play").click(function () {
 			} else if (id < 42) {
 				start = -2;
 			}
-			if (id > 153) {
-				end = -2;
-			} else if (id > 167) {
-				end = -1;
-			} else if (id > 181) {
+			if (id > 181) {
 				end = 0;
+			} else if (id > 167) {
+				end = 1;
+			} else if (id > 153) {
+				end = 2;
 			}
 
-
-			console.log(start, end);
 			var arr = [];
 			for (var i = start; i <= end; i++) {
-				{
-					console.log(id + i, document.getElementById(`${id+i*14}`).className)
-				}
 				if (document.getElementById(`${id+i*14}`).className.split(' ').indexOf(currClass) > -1) {
 					arr.push(1)
 				} else {
@@ -147,35 +126,29 @@ $("#play").click(function () {
 			return (str.indexOf('1111') > -1)
 		}
 
-
 		function diag1() {
 			var start = -3;
 			var end = 3;
-
 			if (id < 14 || id % 14 === 0) {
 				start = 0;
-			} else if (id > 14 & ((id - 1) % 14 === 0) & id < 29) {
-				console.log('14');
+			} else if ((id - 1) % 14 === 0 || id > 14 & id < 30) {
+
 				start = -1;
-			} else if (id > 29 & (id - 2) % 14 === 0) {
-				console.log('29');
+			} else if (id > 29 & id < 42) {
+
 				start = -2;
 			}
-			if (id > 153) {
-				end = -2;
-			} else if (id > 167) {
-				end = -1;
-			} else if (id > 181) {
+
+			if ((id + 1) % 14 === 0 || id > 181) {
 				end = 0;
+			} else if ((id + 2) % 14 === 0 || id > 167) {
+				end = 1;
+			} else if ((id + 3) % 14 === 0 || id > 153) {
+				end = 2;
 			}
 
-
-			console.log(start, end);
 			var arr = [];
 			for (var i = start; i <= end; i++) {
-				{
-					console.log(id + i, document.getElementById(`${id+i*15}`).className)
-				}
 				if (document.getElementById(`${id+i*15}`).className.split(' ').indexOf(currClass) > -1) {
 					arr.push(1)
 				} else {
@@ -183,55 +156,40 @@ $("#play").click(function () {
 				}
 			}
 			str = arr.join('');
-			if (str.indexOf('1111') > -1) {
-				console.log('Win');
-				$('#playagain, .message').css({
-					'display': 'block'
-				});
-				$('.message').html(`${currClass} win!`);
-			}
-			console.log('diag', str, currClass);
+			return (str.indexOf('1111') > -1)
 		}
 
-		/* function diag1() {
-    arr = [];
-    for (var i = start; i < start + 8; i++) {
-      {  }
-      if (document.getElementById(`${id+i*13}`).className === cls) {
-        arr.push(1)
-      } else {
-        arr.push(0)
-      }
-    }
-    str = arr.join('');
-    if (str.indexOf('1111') > -1) {
-      console.log('Win');
-      $('.message').html(`${currClass} win!`);
-    }
-
-  }
-*/
 		function diag2() {
+			var start = -3;
+			var end = 3;
+			if (id < 14 || id % 14 === 0) {
+				start = 0;
+			} else if ((id - 1) % 14 === 0 || id > 14 & id < 30) {
+
+				start = -1;
+			} else if (id > 29 & id < 42) {
+
+				start = -2;
+			}
+			if ((id + 1) % 14 === 0 || id > 181) {
+				end = 0;
+			} else if ((id + 2) % 14 === 0 || id > 167) {
+				end = 1;
+			} else if ((id + 3) % 14 === 0 || id > 153) {
+				end = 2;
+			}
 			arr = [];
-			for (var i = start; i < start + 8; i++) {
-				{ /*console.log('id', document.getElementById(`${id+i}`).className)*/ }
-				if (document.getElementById(`${id+i*14}`).className === cls) {
+			for (var i = start; i <= end; i++) {
+
+				if (document.getElementById(`${id+i*13}`).className.split(' ').indexOf(currClass) > -1) {
 					arr.push(1)
 				} else {
 					arr.push(0)
 				}
 			}
 			str = arr.join('');
-			if (str.indexOf('1111') > -1) {
-				console.log('Win');
-				$('#playagain, .message').css({
-					'display': 'block'
-				});
-				$('.message').html(`${currClass} win!`);
-			}
-
+			return (str.indexOf('1111') > -1)
 		}
-
 	}
 
 	function renderMain() {
@@ -242,8 +200,6 @@ $("#play").click(function () {
 				result = result + `<div class="cell" ></div>`
 			}
 		}
-		console.log(obj);
-
 		setTimeout(function () {
 			$('.main').css({
 				'border-top': '1px solid black'
@@ -252,7 +208,6 @@ $("#play").click(function () {
 			$('.main').html(result);
 
 		}, 500)
-
 	}
 
 	function renderCircle() {
@@ -264,10 +219,8 @@ $("#play").click(function () {
 				obj[id] = '';
 				result = result + `<div class=circle id=${id}></div>`
 			}
-
 		}
 		$('.round').html(result);
-
 	}
 
 	renderMain();
@@ -284,7 +237,6 @@ $("#play").click(function () {
 			return currentCount;
 		};
 
-
 		return counter;
 	}
 
@@ -293,11 +245,11 @@ $("#play").click(function () {
 	$('.circle').click(function () {
 
 		if (this.className.indexOf(' white') != -1 || this.className.indexOf(' black') != -1) {
-			console.log('5454', this.className);
+
 		} else {
 
 			counter();
-			console.log('class', this.className, this.id);
+
 			var circleClass;
 			if (counter.get() % 2 == 0) {
 				circleClass = 'white';
