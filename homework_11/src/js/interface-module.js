@@ -1,14 +1,24 @@
-function renderInputs(){
-  var interFace = `<h1>Super Calculator</h1>
-  <label>Operand 1</label>
-  <input id="number1" type="number">
-  <br>
-  <label>Operand 2</label>
-  <input id="number2" type="number">
-  </br>`;
+function renderInputs() {
   var root = document.getElementById("root");
-  root.innerHTML = interFace;
-};
+  var title = document.createElement("h1");
+  title.innerText = "Super Calculator";
+  root.appendChild(title);
+  var label1 = document.createElement("label");
+  label1.innerText = "Operand 1";
+  root.appendChild(label1);
+  var input1 = document.createElement("input");
+  input1.setAttribute("type", "number");
+  input1.id = "number1";
+  root.appendChild(input1);
+  console.log(1);
+  var label2 = document.createElement("label");
+  label2.innerText = "Operand 2";
+  root.appendChild(label2);
+  var input2 = document.createElement("input");
+  input2.setAttribute("type", "number");
+  input2.id = "number2";
+  root.appendChild(input2);
+}
 
 function renderButtons() {
   var root = document.getElementById("root");
