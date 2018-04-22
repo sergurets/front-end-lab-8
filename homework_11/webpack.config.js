@@ -29,6 +29,7 @@ module.exports = {
 		]
 	},
 	plugins: [
+	    new webpack.NoEmitOnErrorsPlugin(),
 		new CleanWebpackPlugin(['dist']),
 		new HtmlWebpackPlugin({
 			filename: 'index.html',
@@ -36,10 +37,8 @@ module.exports = {
 		}),
 		new ExtractTextPlugin(
 		{
-			filename: "styles.css",
-			publicPath : '.src/styles/styles.css'
-		}),
-		new webpack.NoEmitOnErrorsPlugin()
+			filename: "styles.css"
+		})
 	],
-watch: true
+    watch: true
 };

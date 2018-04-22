@@ -9,7 +9,7 @@ input[type=button]{
 	width: 42px;
 	height: 42px;
 	font-size: 24px;
-	margin: 10px auto;
+	margin: 2px;
 	background-color: rgb(255, 204, 0);
 }
 input[type=button]:hover{
@@ -45,3 +45,16 @@ h1{
 #number1, #number2
 {width: 235px;
 padding: 3px;}
+/*
+#plus, #minus, #multiple, #divide, #reset{
+	width: 42px;
+	height: 42px;
+	font-size: 24px;
+	margin: 10px auto;
+	background-color: rgb(255, 204, 0);
+}
+
+
+#plus, #minus, #multiple, #divide, #reset:hover{
+background-color: #ffd83b;
+}*/
