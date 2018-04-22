@@ -17,7 +17,6 @@ addClick();
 
 clearInputs();
 
-
 function giveNumbers() {
   if (input1.value.length === 0 || input2.value.length === 0) {
     return false
