@@ -10,7 +10,6 @@ function renderInputs() {
   input1.setAttribute("type", "number");
   input1.id = "number1";
   root.appendChild(input1);
-  console.log(1);
   var label2 = document.createElement("label");
   label2.innerText = "Operand 2";
   root.appendChild(label2);
