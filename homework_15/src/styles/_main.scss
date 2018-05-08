@@ -1,0 +1,100 @@
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+#root {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.colors {
+  margin-left: 8%;
+  margin-rigth: 8%;
+  display: flex;
+  flex-wrap: wrap;
+  justiy-content: center;
+}
+
+.color {
+  width: 280px;
+  height: 250px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.selected {
+  width: 50px;
+  height: 40px;
+  margin: -5px;
+  border-radius: 5px;
+}
+
+.addColor {
+  font-size: 16px;
+  display: block;
+  background: white;
+  width: 60px;
+  heigth: 25px;
+  border-radius: 5px;
+  text-align: left;
+  margin: 200px 10px 10px 10px;
+  cursor: pointer;
+  padding: 5px;
+  
+   .material-icons {
+	  position: relative;
+	  top: 3px;
+	  font-size: 24px;
+	} 
+}
+
+.controls 
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  
+	input {
+		  outline: none;
+		  font-size: 24px;
+		  color: #757575;
+		  border: 1px solid white;
+		}
+}
+
+.selectedColors {
+  display: flex;
+}
+
+.delColor {
+  display: block;
+  
+  .material-icons {
+	  width: 20px;
+	  heigth: 20px;
+	  font-size: 20px;
+	  display: block;
+	  background: red;
+	  color: white;
+	  margin: -5px;
+	  border-radius: 50%;
+	  text-align: left;
+	  cursor: pointer;
+	}
+
+}
+
+.info {
+  font-size: 24px;
+  text-align: center;
+  margin: 0 auto;
+  color: #757575;
+}
+
+.counter {
+  font-size: 20px;
+  text-align: right;
+  margin-right: 20px;
+  color: #757575;
+}
