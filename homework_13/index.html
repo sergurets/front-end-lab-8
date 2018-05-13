@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Пример веб-страницы</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="lib/angular.min.js"></script>
+    <script src="src/data.js"></script>
+    <script src="src/app.js"></script>
+  </head>
+  <body ng-app="simpleApp" ng-controller="Ctrl">
+    <h1>Рецензии</h1>
+    <h3>Жанры:</h3>
+    <div ng-repeat="data in posts">
+      <p ng-click="myFunction(data.categories)"> {{data.categories}}</p>
+    </div>
+    <input type='text' ng-model='query'></input>
+	<div id='edit'>
+	<input id='save' type="submit" ng-click="editpost()" value="Save" />
+	</div>
+    <div ng-repeat="data in defPosts | filter:query">
+      <h2>{{data.title}}</h2>
+      <p ng-click="categoriesFilter(data.categories)">
+        {{data.categories}}
+      </p>
+      <img ng-src={{data.photo}}>
+      </img>
+      <p>
+        {{data.description}}
+      </p>
+	  <input type="submit" ng-click="edit(data)" value="Edit" />
+    </div>
+    <div id='form'>  
+      <label>Группа - Альбом</label><br/><input type="text" ng-model="post.title" /><br/>
+      <label>Категории </label><br/><input type="text" ng-model="post.categories"/><br/>
+      <label>Рецензия </label><br/><textarea value="text" ng-model="post.description"></textarea><br/>
+      <label>Ссылка на изображение</label><br/><input type="text" ng-model="post.photo"/><br/>
+      <br/><input type="submit" ng-click="update(post)" value="Добавить" />
+	  
+    </div>
+  </body>
+</html>
